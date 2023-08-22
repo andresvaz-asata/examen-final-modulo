@@ -3,7 +3,7 @@ include_once 'config/Database.php';
 
 include_once 'class/User.php';
 include_once 'class/Ticket.php';
-
+ /* Prueba */
 $database = new Database();
 $db = $database->getConnection();
 
