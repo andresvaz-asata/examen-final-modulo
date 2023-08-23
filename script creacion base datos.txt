@@ -1,0 +1,58 @@
+CREATE TABLE `ticket_user` (
+  `userid` int(11) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `password` varchar(200) NOT NULL,
+  `name` varchar(200) NOT NULL,
+  `role` enum('admin','member') NOT NULL,
+  `status` enum('Active','Inactive') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+ALTER TABLE `ticket_user`
+  ADD PRIMARY KEY (`userid`);
+  
+ALTER TABLE `ticket_user`
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+
+CREATE TABLE `department` (
+  `id` int(11) NOT NULL,
+  `department` varchar(255) NOT NULL,
+  `status` enum('enable','disable') NOT NULL DEFAULT 'enable'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+ALTER TABLE `department`
+  ADD PRIMARY KEY (`id`);
+  
+ALTER TABLE `department`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;  
+
+CREATE TABLE `tickets` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `message` text NOT NULL,
+  `userid` int(11) NOT NULL,
+  `department_id` int(11) NOT NULL,
+  `mentioned` varchar(255) NOT NULL,
+  `created` datetime NOT NULL DEFAULT current_timestamp(),
+  `status` enum('open','closed','resolved') NOT NULL DEFAULT 'open'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+ALTER TABLE `tickets`
+  ADD PRIMARY KEY (`id`);
+  
+ALTER TABLE `tickets`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+CREATE TABLE `ticket_replies` (
+  `id` int(11) NOT NULL,
+  `ticket_id` int(11) NOT NULL,
+  `comments` text NOT NULL,
+  `created_by` varchar(255) NOT NULL,
+  `created` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+ALTER TABLE `ticket_replies`
+  ADD PRIMARY KEY (`id`);
+  
+ALTER TABLE `ticket_replies`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;  

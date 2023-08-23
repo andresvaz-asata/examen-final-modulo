@@ -29,32 +29,32 @@ include('inc/header.php');
 <script src="js/ticket.js"></script>
 <link href="css/style.css" rel="stylesheet">
 <div class="container">
-<section class="content">
-	<div class="row">		
-		<?php include('left_navigation.php'); ?>
-		<!-- END NAV TICKET -->
-		<!-- BEGIN TICKET -->
-		<div class="col-md-9">
-			<div class="grid support-content">
-				 <div class="grid-body">
-					 <h2>Tickets</h2>
-					 
-					 <hr>
-					 
-					 <div class="btn-group">
-						<a href="index.php?status=open">
-							<button type="button" id="open" class="btn btn-default active"><?php echo $ticket->getTicketCountWithStatus('open'); ?> Open</button>
-						</a>						
-					</div>
-					
-					<div class="btn-group">
-						<a href="index.php?status=closed">
-							<button type="button" id="closed" class="btn btn-default"><?php echo $ticket->getTicketCountWithStatus('closed'); ?> Closed</button>
-						</a>
-					</div>
-					 
-					<div class="btn-group">
-						<a href="index.php?order=newest">
+	<section class="content">
+		<div class="row">		
+			<?php include('left_navigation.php'); ?>
+			<!-- END NAV TICKET -->
+			<!-- BEGIN TICKET -->
+			<div class="col-md-9">
+				<div class="grid support-content">
+					<div class="grid-body">
+						<h2>Tickets</h2>
+						
+						<hr>
+						
+						<div class="btn-group">
+							<a href="index.php?status=open">
+								<button type="button" id="open" class="btn btn-default active"><?php echo $ticket->getTicketCountWithStatus('open'); ?> Open</button>
+							</a>						
+						</div>
+						
+						<div class="btn-group">
+							<a href="index.php?status=closed">
+								<button type="button" id="closed" class="btn btn-default"><?php echo $ticket->getTicketCountWithStatus('closed'); ?> Closed</button>
+							</a>
+						</div>
+						
+						<div class="btn-group">
+							<a href="index.php?order=newest">
 							<button type="button" id="newest" class="btn btn-default">Newest</button>
 						</a>
 					</div>
@@ -62,6 +62,14 @@ include('inc/header.php');
 					<div class="btn-group">
 						<a href="index.php?order=oldest">
 							<button type="button" id="oldest" class="btn btn-default">Oldest</button>
+						</a>
+					</div>
+					<div class="btn-group">
+					<a href="./api tickets/mapatickets.php">
+						
+							<button type="button" id="oldest" class="btn btn-default">
+							Mapa de tickets
+							</button>
 						</a>
 					</div>
 					
@@ -108,9 +116,10 @@ include('inc/header.php');
 						</div>
 					</div>
 					<!-- END NEW TICKET -->
+					
 					 
 					<div class="padding"></div>
-					 
+					
 					<div class="row">						
 						<div class="col-md-12">
 							<ul class="list-group fa-padding">
