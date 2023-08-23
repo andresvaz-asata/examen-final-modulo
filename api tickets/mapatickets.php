@@ -31,6 +31,7 @@
 				});
 			var xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function () {
+				/* aplicar lógica de comparación con tabla de tickets abiertos */
 				if (this.readyState == 4 && this.status == 200) {
 					results = JSON.parse(this.responseText);
 					for (var i = 0; i < results.length; i++) {
