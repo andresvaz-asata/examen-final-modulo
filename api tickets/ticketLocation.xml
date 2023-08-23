@@ -1,0 +1,107 @@
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:gml="http://www.opengis.net/gml"
+     xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:georss="http://www.georss.org/georss"
+     xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/"
+     version="2.0">
+  <channel>
+    <title>Capitales Europeas con Coordenadas</title>
+    <link>http://www.example.com</link>
+    <description>Información sobre capitales europeas y sus coordenadas geográficas.</description>
+    <language>es</language>
+    <dc:language>es</dc:language>
+    
+    <item>
+      <title>Madrid</title>
+      <link>http://www.madrid.com</link>
+      <description>Ciudad de Madrid</description>
+      <guid>http://www.madrid.com</guid>
+      <geo:lat>40.4168</geo:lat>
+      <geo:long>-3.7038</geo:long>
+    </item>
+    
+    <item>
+      <title>París</title>
+      <link>http://www.paris.com</link>
+      <description>Ciudad de París</description>
+      <guid>http://www.paris.com</guid>
+      <geo:lat>48.8566</geo:lat>
+      <geo:long>2.3522</geo:long>
+    </item>
+    
+    <item>
+      <title>Roma</title>
+      <link>http://www.roma.com</link>
+      <description>Ciudad de Roma</description>
+      <guid>http://www.roma.com</guid>
+      <geo:lat>41.9028</geo:lat>
+      <geo:long>12.4964</geo:long>
+    </item>
+    
+    <item>
+      <title>Londres</title>
+      <link>http://www.londres.com</link>
+      <description>Ciudad de Londres</description>
+      <guid>http://www.londres.com</guid>
+      <geo:lat>51.5074</geo:lat>
+      <geo:long>-0.1278</geo:long>
+    </item>
+    
+    <item>
+      <title>Berlín</title>
+      <link>http://www.berlin.com</link>
+      <description>Ciudad de Berlín</description>
+      <guid>http://www.berlin.com</guid>
+      <geo:lat>52.5200</geo:lat>
+      <geo:long>13.4050</geo:long>
+    </item>
+    
+    <item>
+      <title>Ámsterdam</title>
+      <link>http://www.amsterdam.com</link>
+      <description>Ciudad de Ámsterdam</description>
+      <guid>http://www.amsterdam.com</guid>
+      <geo:lat>52.3676</geo:lat>
+      <geo:long>4.9041</geo:long>
+    </item>
+    
+    <item>
+      <title>Viena</title>
+      <link>http://www.viena.com</link>
+      <description>Ciudad de Viena</description>
+      <guid>http://www.viena.com</guid>
+      <geo:lat>48.2082</geo:lat>
+      <geo:long>16.3738</geo:long>
+    </item>
+    
+    <item>
+      <title>Atenas</title>
+      <link>http://www.atenas.com</link>
+      <description>Ciudad de Atenas</description>
+      <guid>http://www.atenas.com</guid>
+      <geo:lat>37.9838</geo:lat>
+      <geo:long>23.7275</geo:long>
+    </item>
+    
+    <item>
+      <title>Dublín</title>
+      <link>http://www.dublin.com</link>
+      <description>Ciudad de Dublín</description>
+      <guid>http://www.dublin.com</guid>
+      <geo:lat>53.3498</geo:lat>
+      <geo:long>-6.2603</geo:long>
+    </item>
+    
+    <item>
+      <title>Lisboa</title>
+      <link>http://www.lisboa.com</link>
+      <description>Ciudad de Lisboa</description>
+      <guid>http://www.lisboa.com</guid>
+      <geo:lat>38.7223</geo:lat>
+      <geo:long>-9.1393</geo:long>
+    </item>
+    
+  </channel>
+</rss>
