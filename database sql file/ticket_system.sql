@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 24, 2021 at 04:41 PM
--- Server version: 10.4.20-MariaDB
--- PHP Version: 7.3.29
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 24-08-2023 a las 18:17:20
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,23 +18,23 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ticket_system`
+-- Base de datos: `ticket_system`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `department`
+-- Estructura de tabla para la tabla `department`
 --
 
 CREATE TABLE `department` (
   `id` int(11) NOT NULL,
   `department` varchar(255) NOT NULL,
   `status` enum('enable','disable') NOT NULL DEFAULT 'enable'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `department`
+-- Volcado de datos para la tabla `department`
 --
 
 INSERT INTO `department` (`id`, `department`, `status`) VALUES
@@ -47,7 +47,7 @@ INSERT INTO `department` (`id`, `department`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tickets`
+-- Estructura de tabla para la tabla `tickets`
 --
 
 CREATE TABLE `tickets` (
@@ -58,27 +58,28 @@ CREATE TABLE `tickets` (
   `department_id` int(11) NOT NULL,
   `mentioned` text NOT NULL,
   `created` datetime NOT NULL DEFAULT current_timestamp(),
-  `status` enum('open','closed','resolved') NOT NULL DEFAULT 'open'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `status` enum('open','closed','resolved') NOT NULL DEFAULT 'open',
+  `location` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `tickets`
+-- Volcado de datos para la tabla `tickets`
 --
 
-INSERT INTO `tickets` (`id`, `title`, `message`, `userid`, `department_id`, `mentioned`, `created`, `status`) VALUES
-(2, 'File uploading not working', 'I am facing issue with file uploading. please fix this.', 1, 1, ',smith@coderszine.com', '2021-08-22 20:56:48', 'open'),
-(3, 'dgsdg', 'dgsdgsds', 1, 2, ',smith@coderszine.com', '2021-10-23 21:11:19', 'open'),
-(4, 'zfsafasfasfas', 'fhdfhdfhdfhdfhdfhdfhdf', 1, 3, '', '2021-10-23 21:13:20', 'closed'),
-(5, 'dgdsgsdgs', 'dsgsdgsdgs', 1, 1, ',smith@coderszine.com', '2021-10-23 21:39:50', 'open'),
-(6, 'sfsafasf', 'fasfasfasfas', 1, 1, '', '2021-11-14 16:53:55', 'open'),
-(7, 'user login not working', 'User login functionality not working. please look into this issue.', 2, 1, '', '2021-12-12 17:13:10', 'open'),
-(8, 'user register returning error', 'The use register functionality return error and register not completing.', 2, 1, ',,,,adam@coderszine.com,smith@coderszine.com', '2021-12-12 17:14:10', 'open'),
-(9, 'There are issue in forum', 'I am faicng issue in forums login', 1, 1, ',,smith@coderszine.com', '2021-12-24 20:26:21', 'closed');
+INSERT INTO `tickets` (`id`, `title`, `message`, `userid`, `department_id`, `mentioned`, `created`, `status`, `location`) VALUES
+(2, 'File uploading not working', 'I am facing issue with file uploading. please fix this.', 1, 1, ',smith@coderszine.com', '2021-08-22 20:56:48', 'open', 'Madrid'),
+(3, 'dgsdg', 'dgsdgsds', 1, 2, ',smith@coderszine.com', '2021-10-23 21:11:19', 'open', 'Paris'),
+(4, 'zfsafasfasfas', 'fhdfhdfhdfhdfhdfhdfhdf', 1, 3, '', '2021-10-23 21:13:20', 'closed', 'Lisboa'),
+(5, 'dgdsgsdgs', 'dsgsdgsdgs', 1, 1, ',smith@coderszine.com', '2021-10-23 21:39:50', 'open', 'Madrid'),
+(6, 'sfsafasf', 'fasfasfasfas', 1, 1, '', '2021-11-14 16:53:55', 'open', 'Madrid'),
+(7, 'user login not working', 'User login functionality not working. please look into this issue.', 2, 1, '', '2021-12-12 17:13:10', 'open', 'Londres'),
+(8, 'user register returning error', 'The use register functionality return error and register not completing.', 2, 1, ',,,,adam@coderszine.com,smith@coderszine.com', '2021-12-12 17:14:10', 'open', 'Londres'),
+(9, 'There are issue in forum', 'I am faicng issue in forums login', 1, 1, ',,smith@coderszine.com', '2021-12-24 20:26:21', 'closed', 'Madrid');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ticket_replies`
+-- Estructura de tabla para la tabla `ticket_replies`
 --
 
 CREATE TABLE `ticket_replies` (
@@ -87,10 +88,10 @@ CREATE TABLE `ticket_replies` (
   `comments` text NOT NULL,
   `created_by` varchar(255) NOT NULL,
   `created` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `ticket_replies`
+-- Volcado de datos para la tabla `ticket_replies`
 --
 
 INSERT INTO `ticket_replies` (`id`, `ticket_id`, `comments`, `created_by`, `created`) VALUES
@@ -106,7 +107,7 @@ INSERT INTO `ticket_replies` (`id`, `ticket_id`, `comments`, `created_by`, `crea
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ticket_user`
+-- Estructura de tabla para la tabla `ticket_user`
 --
 
 CREATE TABLE `ticket_user` (
@@ -116,10 +117,10 @@ CREATE TABLE `ticket_user` (
   `name` varchar(200) NOT NULL,
   `role` enum('admin','member') NOT NULL,
   `status` enum('Active','Inactive') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `ticket_user`
+-- Volcado de datos para la tabla `ticket_user`
 --
 
 INSERT INTO `ticket_user` (`userid`, `email`, `password`, `name`, `role`, `status`) VALUES
@@ -127,60 +128,60 @@ INSERT INTO `ticket_user` (`userid`, `email`, `password`, `name`, `role`, `statu
 (2, 'smith@coderszine.com', '202cb962ac59075b964b07152d234b70', 'Smith', 'member', 'Active');
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `department`
+-- Indices de la tabla `department`
 --
 ALTER TABLE `department`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tickets`
+-- Indices de la tabla `tickets`
 --
 ALTER TABLE `tickets`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `ticket_replies`
+-- Indices de la tabla `ticket_replies`
 --
 ALTER TABLE `ticket_replies`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `ticket_user`
+-- Indices de la tabla `ticket_user`
 --
 ALTER TABLE `ticket_user`
   ADD PRIMARY KEY (`userid`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `department`
+-- AUTO_INCREMENT de la tabla `department`
 --
 ALTER TABLE `department`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `tickets`
+-- AUTO_INCREMENT de la tabla `tickets`
 --
 ALTER TABLE `tickets`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `ticket_replies`
+-- AUTO_INCREMENT de la tabla `ticket_replies`
 --
 ALTER TABLE `ticket_replies`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `ticket_user`
+-- AUTO_INCREMENT de la tabla `ticket_user`
 --
 ALTER TABLE `ticket_user`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
