@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Client register</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <h2>Client register</h2>
+    <form action="register-client.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="status">status:</label>
+        <input type="text" id="status" name="status" value="Active" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <label for="role">Select a role:</label>
+        <select name="role" id="role">
+            <option value="admin">Admin</option>
+            <option value="member">Member</option>
+        </select>
+        <br>
+        <input type="submit" value="Registrar">
+    </form>
+</body>
+</html>

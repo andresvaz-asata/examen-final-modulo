@@ -59,16 +59,20 @@ include('inc/header.php');
 						<input type="submit" name="login" value="Login" class="btn btn-info">	
 					</div>	
 					
-					<p>
-					<h3>User Login</h3>
-					<strong>Email: </strong>adam@coderszine.com<br>
-					<strong>Password:</strong> 123<br><br>		
 					
-					<h3>User Login</h3>
-					<strong>Email: </strong>smith@coderszine.com<br>
-					<strong>Password:</strong> 123<br><br>									
+					<p>
+						<h3>User Login</h3>
+						<strong>Email: </strong>adam@coderszine.com<br>
+						<strong>Password:</strong> 123<br><br>		
+						
+						<h3>User Login</h3>
+						<strong>Email: </strong>smith@coderszine.com<br>
+						<strong>Password:</strong> 123<br><br>									
 					</p>					
 				</form>   
+				<div style="margin-top:10px" class="form-group">                          
+					<a href="register.html" class="btn btn-info">Registrar cliente</a>
+				</div>	
 			</div>                     
 		</div>  
 	</div>       

@@ -23,7 +23,7 @@
     </item>
     
     <item>
-      <title>París</title>
+      <title>Paris</title>
       <link>http://www.paris.com</link>
       <description>Ciudad de París</description>
       <guid>http://www.paris.com</guid>
@@ -50,7 +50,7 @@
     </item>
     
     <item>
-      <title>Berlín</title>
+      <title>Berlin</title>
       <link>http://www.berlin.com</link>
       <description>Ciudad de Berlín</description>
       <guid>http://www.berlin.com</guid>
@@ -59,7 +59,7 @@
     </item>
     
     <item>
-      <title>Ámsterdam</title>
+      <title>Amsterdam</title>
       <link>http://www.amsterdam.com</link>
       <description>Ciudad de Ámsterdam</description>
       <guid>http://www.amsterdam.com</guid>
@@ -86,7 +86,7 @@
     </item>
     
     <item>
-      <title>Dublín</title>
+      <title>Dublin</title>
       <link>http://www.dublin.com</link>
       <description>Ciudad de Dublín</description>
       <guid>http://www.dublin.com</guid>
@@ -102,6 +102,16 @@
       <geo:lat>38.7223</geo:lat>
       <geo:long>-9.1393</geo:long>
     </item>
+<item>
+    <title>Varsovia</title>
+    <link>http://www.varsovia.com</link>
+    <description>Ciudad de Varsovia</description>
+    <guid>http://www.varsovia.com</guid>
+    <geo:lat>52.2297</geo:lat>
+    <geo:long>21.0122</geo:long>
+</item>
+
+
     
   </channel>
 </rss>
